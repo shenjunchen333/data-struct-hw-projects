@@ -72,8 +72,16 @@ void input_events(event *e,school schools[],int school_number,int male_event_num
     for (int i=0;i<num;i++) {
         printf("Please enter the name of rank %d:",i+1);
         scanf("%s",e->name[i]);
-        printf("Please enter the school ID of rank %d:",i+1);
-        scanf("%d",&e->school_id[i]);
+        int valid0=0;
+        while (valid0==0) {
+            printf("Please enter the school ID of rank %d:",i+1);
+            scanf("%d",&e->school_id[i]);
+            if (e->school_id[i]>=1 && e->school_id[i]<=school_number) {
+                valid0=1;
+            }else {
+                printf("Please enter a valid school ID!\n\n");
+            }
+        }
         e->score[i]=score(type,i);
         int score=e->score[i];
         //根据event信息录入school信息
