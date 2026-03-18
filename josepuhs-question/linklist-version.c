@@ -35,15 +35,15 @@ void append_node(List *ll, Node *new_node) {
         ll->tail=new_node;
     }
 }
-//根据密码组建链表//一切造物的工已经完毕
-void God_End_His_Work(int n,int pwd[],List* ll) {
+//根据密码组建链表
+void All_The_Work_of_Creation(int n,int pwd[],List* ll) {
     for (int i=0;i<n;i++) {
         Node *new_node;
         create_list(i+1,pwd[i],&new_node);
         append_node(ll,new_node);
     }
 }
-//约瑟夫环过程//无疑之日已至
+//约瑟夫环过程
 void josephus(List *ll,int m) {
     if (ll->head==NULL) return;
     Node *cur=ll->head;
@@ -112,7 +112,7 @@ int main() {
     }
     List list;
     initialization_list(&list);
-    God_End_His_Work(n,pwd,&list);
+    All_The_Work_of_Creation(n,pwd,&list);
     josephus(&list,m);
     return 0;
 }
